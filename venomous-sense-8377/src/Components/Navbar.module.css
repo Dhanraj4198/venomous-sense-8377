@@ -1,0 +1,16 @@
+.active{
+    color: red
+}
+.default{
+    color: black
+}
+.active2{
+    color: yellow;
+    border-right: 1px solid black;
+    padding-right: 15px;
+}
+.default2{
+    color: white;
+    border-right: 1px solid black;
+    padding-right: 15px;
+}
