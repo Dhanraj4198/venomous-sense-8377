@@ -24,8 +24,6 @@ export default function Home() {
   useEffect(() => {
     getHomeApi().then((res) => setNews(res.data.articles));
   }, []);
-  console.log(news);
-  
   return (
     <>
       <Container margin={"none"} maxW="60%">
@@ -87,14 +85,14 @@ export default function Home() {
       <br />
       <br />
       <Container maxW={"60%"}>
-        <Grid templateColumns={"repeat(3,1fr)"} gap={6}>
+        <Grid _hover={{cursor:'pointer'}} templateColumns={"repeat(3,1fr)"} gap={6}>
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               MOVIES
             </Heading>
-            <Image src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202209/SuriyaNationalAward.jpeg?size=370:208" />
+            <Image src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202210/1494597464-sh_1200x768.jpeg?size=370:208" />
             <Heading textAlign={"left"} size={"md"}>
-              WhatsApp trick: How to read deleted messages
+            Shankar Mahadevan calls Abhi Na Jao Chhod Kar the best composed song till now
             </Heading>
           </GridItem>
           <GridItem>
@@ -291,18 +289,25 @@ export default function Home() {
       <Container maxW={"50%"}>
         <Grid templateColumns={"repeat(1,1fr)"} gap={6}>
           {news.map((item) => (
-            <GridItem _hover={{cursor:'pointer'}}   >
-                
+            <GridItem _hover={{ cursor: "pointer" }}>
               <Image w={"full"} key={item.id} src={item.urlToImage} />
-              <Heading noOfLines={1} textAlign={'left'} size={"md"} key={item.id}>
+              <Heading
+                noOfLines={1}
+                textAlign={"left"}
+                size={"md"}
+                key={item.id}
+              >
                 {item.title}
               </Heading>
               <br />
-              <Heading noOfLines={2} textAlign={'left'} size={'sm'} >{item.content}</Heading>
+              <Heading noOfLines={2} textAlign={"left"} size={"sm"}>
+                {item.content}
+              </Heading>
               <br />
-              <Heading textAlign={'left'} size={'xs'} color='red' >India Today</Heading>
-              <Divider orientation='horizontal' />
-             
+              <Heading textAlign={"left"} size={"xs"} color="red">
+                India Today
+              </Heading>
+              <Divider orientation="horizontal" />
             </GridItem>
           ))}
         </Grid>

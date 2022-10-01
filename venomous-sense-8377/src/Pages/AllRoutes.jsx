@@ -11,7 +11,7 @@ import World from "./World";
 import LiveTV from "./Livetv";
 import AppPage from "./AppPage";
 import Magazine from "./Magazine";
-
+import Login from "./Login";
 export default function AllRoutes() {
   return (
     <Routes>
@@ -27,7 +27,7 @@ export default function AllRoutes() {
       <Route path="/livetv" element={<LiveTV></LiveTV>}></Route>
       <Route path="/magazine" element={<Magazine></Magazine>}></Route>
       <Route path="/our-apps" element={<AppPage></AppPage>}></Route>
-      
+      <Route path="/login" element={<Login></Login>}></Route>
     </Routes>
   );
 }
