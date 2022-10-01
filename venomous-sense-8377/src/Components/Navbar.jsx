@@ -15,7 +15,7 @@ import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 export default function Navbar() {
   return (
     <>
-      <Center borderTop={"1px"} color="gray.400" borderBottom={"1px"} >
+      <Center borderTop={"1px"} color="gray.400" borderBottom={"1px"}>
         <Box>
           <HStack gap={8}>
             <Box _hover={{ color: "black" }} color={"gray.600"}>
@@ -107,8 +107,8 @@ export default function Navbar() {
           w={"full"}
           bg={"#a00606"}
           paddingLeft="5%"
-          paddingRight={'10%'}
-          alignItems='center'
+          paddingRight={"10%"}
+          alignItems="center"
         >
           <Box>
             <HStack gap={3}>
@@ -205,7 +205,7 @@ export default function Navbar() {
             </HStack>
           </Box>
           <Box>
-            <HStack gap={4} >
+            <HStack gap={4}>
               <Box>
                 <HamburgerIcon w={8} h={10} color={"white"} />
               </Box>
@@ -226,9 +226,16 @@ export default function Navbar() {
               <Box>
                 <Search2Icon color={"white"} w={8} h={10} />
               </Box>
-              <Box>
-                <Icon as={FaUserAlt} color="white" w={8} h={10} />
+              <NavLink border={'none'} className={({ isActive }) => {
+                  return isActive ? styles.active3 : styles.default3;
+                }}
+                to="/login"
+                end  >
+              <Box border >
+                <Icon as={FaUserAlt}  w={8} h={10} />
               </Box>
+              </NavLink>
+              
             </HStack>
           </Box>
         </Flex>
