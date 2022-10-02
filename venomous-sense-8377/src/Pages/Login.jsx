@@ -1,16 +1,12 @@
 import {
   Container,
   Heading,
-  Box,
-  Image,
   Button,
   Checkbox,
   Text,
   Flex,
   Divider,
   Icon,
-  FormControl,
-  FormLabel,
   Input,
   Stack,
   InputGroup,
@@ -22,7 +18,35 @@ import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BsKey } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
 export default function Login() {
+  const [auth, setAuth] = useState(false);
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleChangePass = (e) => {
+    setPass(e.target.value);
+  };
+  const handleClick = () => {
+    axios
+      .post(`https://reqres.in/api/login`, {
+        email: email,
+        password: pass,
+      })
+      .then((res) => {
+        setAuth(true);
+      })
+      .catch((error) => {
+        alert(`${error}  Wrong Email ID or Password`);
+      });
+  };
+  if (auth) {
+    return <Navigate to="/" />;
+  }
   return (
     <>
       <Container maxW={"70%"}>
@@ -66,12 +90,14 @@ export default function Login() {
           </Heading>
           <Divider width={"500px"} />
         </Flex>
-        <br /><br />
+        <br />
+        <br />
         <Center>
           <Stack spacing={4}>
             <InputGroup size={"lg"}>
               <InputLeftAddon children={<Icon as={AiOutlineMail} />} />
               <Input
+                onChange={handleChange}
                 w={"700px"}
                 type="text"
                 placeholder="Enter Your Email/Mobile"
@@ -80,6 +106,7 @@ export default function Login() {
             <InputGroup size="lg">
               <InputLeftAddon children={<Icon as={BsKey} />} />
               <Input
+                onChange={handleChangePass}
                 w={"700px"}
                 type={"password"}
                 placeholder="Enter Your Password"
@@ -88,16 +115,41 @@ export default function Login() {
           </Stack>
         </Center>
         <br />
-        <Flex marginLeft={'510px'} >
-        <Checkbox>Remember me</Checkbox>
+        <Flex marginLeft={"510px"}>
+          <Checkbox>Remember me</Checkbox>
         </Flex>
-        <br /><br />
-        <Flex margin={' 0px 510px'} justifyContent={'space-between'} >
-        <Text _hover={{cursor:"pointer"}} color={'blue'} fontWeight='bold' fontSize={'lg'} >Forgot password?</Text>
-        <Text _hover={{cursor:"pointer"}} color={'blue'} fontWeight='bold' fontSize={'lg'} >Login via OTP</Text>
+        <br />
+        <br />
+        <Flex margin={" 0px 510px"} justifyContent={"space-between"}>
+          <Text
+            _hover={{ cursor: "pointer" }}
+            color={"blue"}
+            fontWeight="bold"
+            fontSize={"lg"}
+          >
+            Forgot password?
+          </Text>
+          <Text
+            _hover={{ cursor: "pointer" }}
+            color={"blue"}
+            fontWeight="bold"
+            fontSize={"lg"}
+          >
+            Login via OTP
+          </Text>
         </Flex>
-        <br /><br />
-       <Button bg={'#2369d6'} color='white' fontSize={'4xl'} w={'400px'} h={'60px'} >Login</Button>
+        <br />
+        <br />
+        <Button
+          onClick={handleClick}
+          bg={"#2369d6"}
+          color="white"
+          fontSize={"4xl"}
+          w={"400px"}
+          h={"60px"}
+        >
+          Login
+        </Button>
       </Container>
     </>
   );

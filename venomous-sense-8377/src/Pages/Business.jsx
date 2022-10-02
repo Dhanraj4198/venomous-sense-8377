@@ -12,6 +12,7 @@ import {
   Image,
   HStack,
 } from "@chakra-ui/react";
+import News from "../Components/News";
 export default function Business() {
   const [news, setNews] = useState([]);
   const [page, setPage] = useState(1);
@@ -45,14 +46,27 @@ export default function Business() {
             </GridItem>
           ))}
         </Grid>
-        <Button disabled={page === 1} onClick={() => setPage(page - 1)}>
+        <br />
+        <br />
+        <Button
+          color={"red"}
+          disabled={page === 1}
+          onClick={() => setPage(page - 1)}
+        >
           Previous
         </Button>
-        <Button>{page}</Button>
-        <Button disabled={page === 6} onClick={() => setPage(page + 1)}>
+        <Button color={"red"}>{page}</Button>
+        <Button
+          color={"red"}
+          disabled={page === 6}
+          onClick={() => setPage(page + 1)}
+        >
           Next
         </Button>
       </Container>
+      <br />
+      <br />
+      <News></News>
     </>
   );
 }

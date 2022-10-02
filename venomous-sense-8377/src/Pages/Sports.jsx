@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getSportsApi } from "../Api/SportApi";
+import News from "../Components/News";
 import {
   Container,
   Box,
@@ -46,14 +47,17 @@ export default function Sports() {
             </GridItem>
           ))}
         </Grid>
-        <Button disabled={page === 1} onClick={() => setPage(page - 1)}>
+        <br /><br />
+        <Button color={'red'}  disabled={page === 1} onClick={() => setPage(page - 1)}>
           Previous
         </Button>
-        <Button>{page}</Button>
-        <Button disabled={page === 6} onClick={() => setPage(page + 1)}>
+        <Button color={'red'} >{page}</Button>
+        <Button color={'red'}  disabled={page === 6} onClick={() => setPage(page + 1)}>
           Next
         </Button>
       </Container>
+      <br /><br />
+      <News></News>
     </>
   );
 }

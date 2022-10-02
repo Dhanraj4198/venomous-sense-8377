@@ -7,10 +7,8 @@ import {
   GridItem,
   Heading,
   Image,
-  Text,
   Center,
   Flex,
-  HStack,
   List,
   ListItem,
   Divider,
@@ -18,7 +16,6 @@ import {
 import { getHomeApi } from "../Api/HomeApi";
 import { useState } from "react";
 import { useEffect } from "react";
-
 export default function Home() {
   const [news, setNews] = useState([]);
   useEffect(() => {
@@ -85,16 +82,22 @@ export default function Home() {
       <br />
       <br />
       <Container maxW={"60%"}>
-        <Grid _hover={{cursor:'pointer'}} templateColumns={"repeat(3,1fr)"} gap={6}>
+        <Grid
+          _hover={{ cursor: "pointer" }}
+          templateColumns={"repeat(3,1fr)"}
+          gap={6}
+        >
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               MOVIES
             </Heading>
             <Image src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202210/1494597464-sh_1200x768.jpeg?size=370:208" />
             <Heading textAlign={"left"} size={"md"}>
-            Shankar Mahadevan calls Abhi Na Jao Chhod Kar the best composed song till now
+              Shankar Mahadevan calls Abhi Na Jao Chhod Kar the best composed
+              song till now
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               TECHNOLOGY
@@ -104,6 +107,7 @@ export default function Home() {
               WhatsApp trick: How to read deleted messages
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               SPORTS
@@ -114,6 +118,7 @@ export default function Home() {
               T20I runs
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               LIFESTYLE
@@ -124,6 +129,7 @@ export default function Home() {
               Singer
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               TRENDING
@@ -134,6 +140,7 @@ export default function Home() {
               cat
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               INDIA
@@ -144,6 +151,7 @@ export default function Home() {
               join ISIS acquitted
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               INDIA TODAY PODCASTS
@@ -154,6 +162,7 @@ export default function Home() {
               Defence Ep 27
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               SCIENCE
@@ -164,6 +173,7 @@ export default function Home() {
               climate
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               BUSINESS
@@ -174,6 +184,7 @@ export default function Home() {
               raises rates by 50 bps
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               TELEVISION
@@ -184,6 +195,7 @@ export default function Home() {
               to Ankit Gupta
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               WORLD
@@ -194,6 +206,7 @@ export default function Home() {
               Nato membership
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               AUTO
@@ -213,6 +226,7 @@ export default function Home() {
               today
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               CITIES
@@ -223,6 +237,7 @@ export default function Home() {
               Video
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               HEALTH
@@ -232,6 +247,7 @@ export default function Home() {
               What is BED? All you need to know about binge-eating disorder
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               NEWS ANALYSIS
@@ -242,6 +258,7 @@ export default function Home() {
               David | Views
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               INDIA TODAY INSIGHT
@@ -252,6 +269,7 @@ export default function Home() {
               Muslims?
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               LAW
@@ -262,6 +280,7 @@ export default function Home() {
               against Shiv Sena workers
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               CRIME
@@ -272,6 +291,7 @@ export default function Home() {
               treatment
             </Heading>
           </GridItem>
+
           <GridItem>
             <Heading textAlign={"left"} size={"md"}>
               FACT CHECK
